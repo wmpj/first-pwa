@@ -29,7 +29,7 @@ export default function RootLayout({
         <link rel="manifest" href="/manifest.json" />
       </Head>
       <BlockEvent />
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className} min-h-screen max-h-screen`}>{children}</body>
     </html>
   )
 }
