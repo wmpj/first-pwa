@@ -25,3 +25,17 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+// for pwa
+// ref : https://gist.github.com/sconstantinides/221a9ae6bf8a1d2bc02f1e5d5d5ddf61
+/* Replace "standalone" with "fullscreen" depending on your manifest.json display mode */
+
+@media (display-mode: standalone) {
+  /* All installed PWAs */
+  html,
+  body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+  }
+}
