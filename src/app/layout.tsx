@@ -1,11 +1,21 @@
+import Head from 'next/head'
 import './globals.css'
 import { Inter } from 'next/font/google'
+import { Metadata } from 'next'
+import BlockEvent from '@/components/BlockEvent'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'My PWA',
   description: 'This is PWA',
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    minimumScale: 1,
+    maximumScale: 1,
+    userScalable: false,
+  }
 }
 
 export default function RootLayout({
@@ -14,10 +24,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <head>
+    <html lang="ko">
+      <Head>
         <link rel="manifest" href="/manifest.json" />
-      </head>
+      </Head>
+      <BlockEvent />
       <body className={inter.className}>{children}</body>
     </html>
   )
